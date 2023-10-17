@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/72fee1912b.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/style.css">
+    <title>Link Bookmark</title>
+</head>
+<!------------------------------------------------------------------------------------------------------------------>
+<body>
+    <div class="container">
+        <h1 id="heading" class="text-center">Link Store</h1>
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+        <form action="/add-item" method="POST">
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" name="description" class="form-control" id="description" placeholder="Write About Link" required></input>
+            </div>
+<!--------------------------------------------- Input for URL------------------------------------------------------->
+              <div class="form-group">
+                <label for="url">URL</label>
+                <input type="url" class="form-control" id="due-date" placeholder="URL" required name="url">
+              </div>
+              <br>
+    </div>
+<!-- --------------------------------------------------------------------------------------------------------------- -->
+            <!-- Submit button -->
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-success btn-lg">Add Link</button>
+            </div>
+        </form>
+        <br>
+
+<!------------------------------------------------------ Displaying Task------------------------------------------->
+        <ul class="list-group">
+            <% for(let i of items){ %>
+                <li class="list-group-item">
+                    <!-- Delete Icon -->
+                    <div class="delete-icon">
+                        <a href="/delete-item/?id=<%=i.id%>">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </div>
+
+                    <!-- Description-->
+                    <div class="content">
+                        <div class="desc">
+                            <h6>
+                                <%= i.description %>
+                            </h6>
+                        </div>
+                        <div>
+                            <p class="text-muted font-weight-light">
+                                <a href="<%= i.url %>"><%= i.url %></a>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>

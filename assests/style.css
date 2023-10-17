@@ -1,0 +1,47 @@
+body{
+    background-color: rgb(190, 118, 148);
+}
+
+#heading{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.container{
+    background-color: rgb(226, 226, 174);
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+.delete-icon{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.delete-icon a{
+    color: rgb(228, 54, 54);
+    font-size: 30px;
+    padding-right: 15px;
+}
+
+.content{
+    display: inline-block;
+    max-width: 80%;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+.badge{
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+}
+
+.desc{
+    overflow-wrap: break-word;
+}
+.list-group-item{
+    background-color: rgb(254, 255, 253);
+    border-radius: 20px;
+}
